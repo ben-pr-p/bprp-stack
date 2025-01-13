@@ -3,7 +3,7 @@
 Frontend:
 - [x] Tailwind
 - [ ] Vitest
-- [ ] shadcn/ui
+- [x] shadcn/ui
 - [ ] Jotai
 - [ ] React Query (w/ tanstack setup)
 
