@@ -1,14 +1,14 @@
-// app/routes/__root.tsx
-import {
-  Outlet,
-  ScrollRestoration,
-  createRootRoute,
-} from "@tanstack/react-router";
+import appCss from "@/app/global.css?url";
+import { type QueryClient, useQueryClient } from "@tanstack/react-query";
+import { Outlet, ScrollRestoration, createRootRouteWithContext } from "@tanstack/react-router";
 import { Meta, Scripts } from "@tanstack/start";
+import { queryClientAtom } from "jotai-tanstack-query";
+import { useHydrateAtoms } from "jotai/utils";
 import type { ReactNode } from "react";
-import appCss from "../global.css?url";
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   head: () => ({
     meta: [
       {
@@ -32,17 +32,25 @@ export const Route = createRootRoute({
   component: RootComponent,
 });
 
+function HydrateQueryClientAtom({ children }: { children: ReactNode }) {
+  const queryClient = useQueryClient();
+  useHydrateAtoms([[queryClientAtom, queryClient]]);
+  return children;
+}
+
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <HydrateQueryClientAtom>
+        <Outlet />
+      </HydrateQueryClientAtom>
     </RootDocument>
   );
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <Meta />
       </head>
