@@ -16,7 +16,7 @@
     "indentWidth": 2
   },
   "organizeImports": {
-    "enabled": true
+    "enabled": false
   },
   "linter": {
     "enabled": true,
@@ -57,7 +57,7 @@
   "javascript": {
     "formatter": {
       "semicolons": "always",
-      "trailingCommas": "es5"
+      "trailingCommas": "all"
     }
   }
 }

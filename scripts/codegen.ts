@@ -16,7 +16,7 @@ async function runMigrations(connectionString: string) {
       migrationsFolder: config.MIGRATIONS_FOLDER,
     },
     // true for once (run and done)
-    true
+    true,
   );
 }
 

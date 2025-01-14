@@ -55,7 +55,7 @@ export async function getPool(): Promise<GetPoolResult> {
         migrationsFolder: config.MIGRATIONS_FOLDER,
       },
       // true for once (run and done)
-      true
+      true,
     );
 
     return {
@@ -116,7 +116,7 @@ export async function startPgGatewayServer() {
         port: serverAddress.port,
         connectionString: `postgres://postgres:postgres@localhost:${serverAddress.port}/postgres`,
       });
-    })
+    }),
   );
 }
 

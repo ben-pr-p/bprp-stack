@@ -6,6 +6,10 @@
     "target": "ES2022",
     "skipLibCheck": true,
     "strictNullChecks": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"]

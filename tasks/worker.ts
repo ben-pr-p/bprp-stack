@@ -19,9 +19,9 @@ const afterCreateWidget = createTask(
       },
       "Test",
       "sample-two",
-      { widgetId }
+      { widgetId },
     );
-  }
+  },
 );
 
 const taskList = createTaskList().addTask("after-create-widget", afterCreateWidget).getTaskList();

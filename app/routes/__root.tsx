@@ -1,10 +1,10 @@
-import appCss from "@/app/global.css?url";
 import { type QueryClient, useQueryClient } from "@tanstack/react-query";
 import { Outlet, ScrollRestoration, createRootRouteWithContext } from "@tanstack/react-router";
 import { Meta, Scripts } from "@tanstack/start";
 import { queryClientAtom } from "jotai-tanstack-query";
 import { useHydrateAtoms } from "jotai/utils";
 import type { ReactNode } from "react";
+import appCss from "@/app/global.css?url";
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient;
