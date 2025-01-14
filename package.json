@@ -1,6 +1,7 @@
 {
   "name": "bprp-stack",
   "type": "module",
+  "template": true,
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
